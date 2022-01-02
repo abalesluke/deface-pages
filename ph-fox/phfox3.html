@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://github.com/abalesluke/deface-pages/blob/main/ph-fox/cyanphfoxv3.gif?raw=true">
+	<title>Ph-Fox</title>
+</head>
+<body onload="ply();" oncontextmenu="return false" onkeydown="return false">
+<div class="overlay"></div>
+<div class="header">
+	<img draggable="false" id="logo" src="https://github.com/abalesluke/deface-pages/blob/main/ph-fox/cyanphfoxv3.gif?raw=true">
+	<div class="textlogo">
+		<h1>[ Ph-Fox ]</h1>
+		<marquee><h2 >Ph-Fox Fucked Your Website </h2></marquee>
+		<div id="fuck">
+			<img id="fuckheader" height="150px" width="150px" src="https://www.dhresource.com/260x260s/f2-albu-g18-M00-44-39-rBVapWFye92AIGN_AAp1453a_tQ219.jpg/demon-slayer-fox-mask-halloween-party-japanese.jpg" style="border-radius: 1000px; border: 1px solid lime;">
+		</div>
+	<div>
+    <audio id="msc" src="https://anikinlukeabales.rf.gd/phfox.mp3" autoplay></audio>
+</div>
+<script>
+    function ply(){
+        document.getElementById('msc').play();
+    }
+
+  dragElement(document.getElementById("fuck"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+</script>
+<style type="text/css">
+#fuck {
+  position: absolute;
+  z-index: 9;
+  background-color: transparent;
+
+}
+
+#fuckheader {
+  padding: 10px;
+  cursor: default;
+  z-index: 10;
+}
+body{
+	background-color: #101010;
+	margin: 0 auto;
+    user-select: none;
+}
+
+.header{
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+.textlogo{
+	margin-top: 4.2in;
+	position: fixed;
+}
+
+.textlogo h1{
+	color: cyan;
+	font-size: 40px;
+	font-family: monospace;
+	text-align: center;
+}
+.textlogo h2{
+	color: red;
+	box-shadow: 0px 0px 3px 1px cyan;
+}
+
+.overlay {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            180deg,
+            rgba(0, 0, 0) 0,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    background-size: auto 4px;
+    z-index: 1;
+}
+
+.overlay::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(0, 255, 255, 0.2) 2%,
+            rgba(0, 255, 255, 0.8) 3%,
+            rgba(0, 255, 255, 0.2) 3%,
+            transparent 100%);
+    background-repeat: no-repeat;
+    animation: scan 7.5s linear 0s infinite;
+}
+@keyframes scan {
+    0% {
+        background-position: 0 -100vh;
+    }
+    35%, 100% {
+        background-position: 0 100vh;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+</style>
+</body>
+</html>
